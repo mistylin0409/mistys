@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
+
+    <!--Description-->
+    
+        <meta name="description" content="列表页作为一个基础功能模块，几乎在每个产品中都能看到，在实际项目设计中也经常会涉及。我通过在项目实践过程中的学习和思考，从列表页的本质、目的出发，总结以下列表页的设计方法。
+
+Part 1 列表的本质和目的列表的本质其实是为用户提供一系列同类数据信息的展示。那信息展示的目的是什么？解决的是什么问题？">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="Misty Lin">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="列表页设计思考"/>
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="Misty 林雪婷"/>
+
+    <!--Page Cover-->
+    
+        <meta property="og:image" content=""/>
+    
+
+    <!-- Title -->
+    
+    <title>列表页设计思考 - Misty 林雪婷</title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/mistys/css/reset.css">
+    <link rel="stylesheet" href="/mistys/css/main.css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdn.rawgit.com/noelboss/featherlight/1.3.5/release/featherlight.min.css" type="text/css" rel="stylesheet" />
+
+    <!-- Google Analytics -->
+    
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-124806381-1', 'auto');
+        ga('send', 'pageview');
+
+    </script>
+
+
+
+    <!--Favicon-->
+    
+
+</head>
+
+<body>
+
+<!-- Menu -->
+<!-- Navigation -->
+<header>
+    <div class="logo">
+        <a href="/mistys/">Misty 林雪婷</a>
+    </div><!-- end logo -->
+
+    <div id="menu_icon"></div>
+    <nav>
+        <ul>
+            
+            <li>
+                <a href="/mistys/">Project 我的项目</a>
+            </li>
+            
+            <li>
+                <a href="/mistys/resume">Resume 我的简历</a>
+            </li>
+            
+        </ul>
+    </nav><!-- end navigation menu -->
+
+    <div class="footer clearfix">
+        <ul class="social clearfix">
+            
+            
+            
+            
+            
+            
+            
+            
+        </ul><!-- end social -->
+
+        <div class="rights">
+            <p>Copyright © 2014 magnetic.</p>
+            <p>Template by <a href="http://pixelhint.com/magnetic-free-html5-responsive-photography-website-template/">Pixelhint.com</a></p>
+            <p>Hexo Theme by <a href="http://www.codeblocq.com/">Jonathan K.</a></p>
+        </div><!-- end rights -->
+    </div ><!-- end footer -->
+</header><!-- end header -->
+
+
+<!-- Main Content -->
+<section class="main clearfix">
+
+    <section class="top" style="background: url('http://github.com/mistylin0409/mistys/raw/pics/cover_detail_list.png');">
+        <div class="wrapper content_header clearfix">
+            
+
+<div class="work_nav">
+
+    <ul class="btn clearfix">
+        
+        <li><a href="/mistys/2018/08/02/chart/" class="previous" data-title="数据可视化设计思考"></a></li>
+        
+        <li><a href="/mistys/" class="grid" data-title="Portfolio"></a></li>
+        
+        <li><a class="next disabled"></a></li>
+        
+    </ul>
+
+</div><!-- end work_nav -->
+            <h1 class="title">列表页设计思考</h1>
+        </div>
+    </section><!-- end top -->
+
+    <section class="wrapper">
+        <div class="content">
+
+            <!-- Gallery -->
+            
+
+            <!-- Content -->
+            <blockquote>
+<p>列表页作为一个基础功能模块，几乎在每个产品中都能看到，在实际项目设计中也经常会涉及。我通过在项目实践过程中的学习和思考，从列表页的本质、目的出发，总结以下列表页的设计方法。</p>
+</blockquote>
+<h1 id="Part-1-列表的本质和目的"><a href="#Part-1-列表的本质和目的" class="headerlink" title="Part 1 列表的本质和目的"></a>Part 1 列表的本质和目的</h1><p>列表的本质其实是为用户提供一系列同类数据信息的展示。那信息展示的目的是什么？解决的是什么问题？在大多数情况下，列表的信息展示只是某个任务的一个中间环节，比如到达详情页的信息浏览或者批量处理的数据选择，所以列表其实只是用户达到最终目的的其中一个过程，如此可以将列表的本质总结为：为用户提供一系列的同类信息展示，通过有效的信息组织，帮助用户快速找到感兴趣的信息并引导进入下一步的操作。</p>
+<h1 id="Part-2-列表的分类"><a href="#Part-2-列表的分类" class="headerlink" title="Part 2 列表的分类"></a>Part 2 列表的分类</h1><p>根据列表内容不同的复杂程度，可以将列表大致分为这几类：</p>
+<h2 id="纯信息展示"><a href="#纯信息展示" class="headerlink" title="纯信息展示"></a>纯信息展示</h2><p>第一种是纯信息展示的列表，用户来到这里的目的就是为了获取信息，没有下一步的操作。<br><img src="http://github.com/mistylin0409/mistys/raw/pics/list_type1.png" alt=""> </p>
+<h2 id="信息的缩略展示"><a href="#信息的缩略展示" class="headerlink" title="信息的缩略展示"></a>信息的缩略展示</h2><p>第二种是信息缩略展示的列表，用户通过列表页的基础信息找到感兴趣的内容进入详情页进行下一步操作。<br><img src="http://github.com/mistylin0409/mistys/raw/pics/list_type2.png" alt=""> </p>
+<h2 id="带操作的信息展示"><a href="#带操作的信息展示" class="headerlink" title="带操作的信息展示"></a>带操作的信息展示</h2><p>第三种是带操作的信息展示列表，由于对于下一级详情页的操作（该流程的最终目的）很明确，所以将关键操作前置到列表页。<br><img src="http://github.com/mistylin0409/mistys/raw/pics/list_type3.png" alt=""> </p>
+<h1 id="Part-3-列表的组成"><a href="#Part-3-列表的组成" class="headerlink" title="Part 3 列表的组成"></a>Part 3 列表的组成</h1><p>从列表的几个基本分类可以归纳总结出，无论列表内容如何展示，本质上就是由两部分内容组成，一个是信息，一个是操作。信息的展示形式包括文字、图片、图形标签等等，操作一般来说有按钮和手势。</p>
+<h2 id="列表的信息"><a href="#列表的信息" class="headerlink" title="列表的信息"></a>列表的信息</h2><p>在设计列表页每个item的信息需要思考以下两个问题：</p>
+<ol>
+<li><strong>列表应该提供哪些信息足以帮助用户进行判断，找到感兴趣的信息？</strong></li>
+<li><strong>列表的信息如何有效组织？</strong><br><br></li>
+</ol>
+<p>对于第一个问题，列表应该提供哪些信息，这在不同领域、不同场景下的情况都会不同，比如对于一个社交类产品，头像、昵称、个人介绍、身份标示就可以帮助用户进行判断了；但是如果切换到电商类产品，商品图片、商品名称、价格、优惠信息、销量、评价、店铺都会影响用户的判断。<br>这时候就引出第二个问题，列表的信息如何有效组织，尤其是信息量多的列表，比如上文提到的电商类产品，这么多信息的优先级是怎样的，哪些信息更加切中用户的关注点，基于优先级的判断再对信息的展现形式进行设计。<br>这里举一个我实际工作中的例子，在健身房会籍跟进转化一个会员的场景下，需要先将潜在会员信息注册到系统中，然后持续跟进潜在会员，最后转化潜在会员为购卡会员。对于新注册会员列表，关键信息为会员的注册来源、注册推荐人、注册时间；对于跟进中会员，关键信息为会员的最新跟进记录；对于已购卡会员，关键信息为会员的首次购卡记录。<br><img src="http://github.com/mistylin0409/mistys/raw/pics/list_info.png" alt=""> </p>
+<h2 id="列表的操作"><a href="#列表的操作" class="headerlink" title="列表的操作"></a>列表的操作</h2><p>常见的列表操作主要有两种，一种是将关键操作前置的按钮，一种是隐藏手势操作。<br>对于第一种关键操作前置，再举一个我实际工作中的例子，在会员缺勤统计列表，健身房会籍在统计长时间未出勤的会员之后，通常需要去联系维护会员，所以在设计这个列表的时候，将联系会员的操作前置，用户可以直接在列表页完成关键操作。<br><img src="http://github.com/mistylin0409/mistys/raw/pics/list_action.png" alt=""> </p>
+<p>手势隐藏操作常见于iOS系统中对联系人列表的操作，同时在一些效率类工具中也很常见。但是对于绝大多数用户来说，手势隐藏操作是具备一定们槛的，对于基础产品它应该是操作另以个维度的补充而不是唯一方式，使用需要慎重。<br><img src="http://github.com/mistylin0409/mistys/raw/pics/list_gesture.png" alt=""> </p>
+<h1 id="Part-4-快速定位信息的辅助工具"><a href="#Part-4-快速定位信息的辅助工具" class="headerlink" title="Part 4 快速定位信息的辅助工具"></a>Part 4 快速定位信息的辅助工具</h1><p>在一些情况下，列表页往往包含大量数据，如果只能通过下滑查找内容显然是效率很低的，这时候就需要借助一些辅助工具来提高用户找到感兴趣的信息的效率。一般来说有搜索、分类、筛选、排序这几种方式。</p>
+<p><img src="http://github.com/mistylin0409/mistys/raw/pics/list_filter.png" alt=""> </p>
+<ol>
+<li><strong>搜索</strong><br>当用户有很明确的查找目标的时候，通常需要使用搜索功能。在设计搜索功能的时候需要考虑哪些字段是支持搜索的，这跟梳理列表项的关键信息的逻辑是一致的，而且最好将支持搜索的字段显示在搜索栏，引导用户正确搜索。<br><br></li>
+<li><strong>分类</strong><br>分类更多用于列表页展示类型过多的情况，同时这些分类又是互斥的，使用分类能帮助用户更快定位到目标信息类型。<br><br></li>
+<li><strong>筛选&amp;排序</strong><br>排序和筛选通常用于列表项信息较多较复杂的列表，由于影响用户判断的因素较多，所以将关键的影响因素提取为筛选项或者排序项汇总在一起提供给用户。筛选排序项较多的情况下，设计时还需考虑如何将筛选排序有逻辑地分类展示。为提高筛选效率，在一些情况下还会将特殊的筛选项暴露在列表页上，这多见于大型电商平台。</li>
+</ol>
+
+
+            <!-- Tags -->
+            
+
+
+<div class="tags">
+    
+</div>
+
+
+
+            <!-- Comments -->
+            <div>
+                
+
+
+
+
+            </div>
+        </div><!-- end content -->
+    </section>
+</section><!-- end main -->
+
+<!-- After footer scripts -->
+
+<!-- jQuery -->
+<script src="/mistys/js/jquery.js"></script>
+
+<!-- Custom Code -->
+<script src="/mistys/js/main.js"></script>
+
+<!-- Gallery -->
+<script src="//cdn.rawgit.com/noelboss/featherlight/1.3.5/release/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Disqus Comments -->
+
+
+</body>
+
+</html>
