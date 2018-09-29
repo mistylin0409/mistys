@@ -1,153 +1,390 @@
 <!DOCTYPE html>
-<html lang="en">
 
-<!-- Head tag -->
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="">
 <head>
-
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
-
-    <!--Description-->
-    
-        <meta name="description" content="列表页作为一个基础功能模块，几乎在每个产品中都能看到，在实际项目设计中也经常会涉及。我通过在项目实践过程中的学习和思考，从列表页的本质、目的出发，总结以下列表页的设计方法。
-
-Part 1 列表的本质和目的列表的本质其实是为用户提供一系列同类数据信息的展示。那信息展示的目的是什么？解决的是什么问题？">
-    
-
-    <!--Author-->
-    
-        <meta name="author" content="Misty Lin">
-    
-
-    <!--Open Graph Title-->
-    
-        <meta property="og:title" content="移动端列表页设计思考"/>
-    
-
-    <!--Open Graph Site Name-->
-    <meta property="og:site_name" content="Misty 林雪婷"/>
-
-    <!--Page Cover-->
-    
-        <meta property="og:image" content=""/>
-    
-
-    <!-- Title -->
-    
-    <title>移动端列表页设计思考 - Misty 林雪婷</title>
-
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="/mistys/css/reset.css">
-    <link rel="stylesheet" href="/mistys/css/main.css">
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
-    <!-- Gallery -->
-    <link href="//cdn.rawgit.com/noelboss/featherlight/1.3.5/release/featherlight.min.css" type="text/css" rel="stylesheet" />
-
-    <!-- Google Analytics -->
-    
-    <script>
-        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-                    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-        ga('create', 'UA-124806381-1', 'auto');
-        ga('send', 'pageview');
-
-    </script>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222">
 
 
 
-    <!--Favicon-->
-    
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/mistys/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/mistys/css/main.css?v=6.4.1" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/mistys/images/apple-touch-icon-next.png?v=6.4.1">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/mistys/images/favicon-32x32-next.png?v=6.4.1">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/mistys/images/favicon-16x16-next.png?v=6.4.1">
+
+
+  <link rel="mask-icon" href="/mistys/images/logo.svg?v=6.4.1" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/mistys/',
+    scheme: 'Muse',
+    version: '6.4.1',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="列表页作为一个基础功能模块，几乎在每个产品中都能看到，在实际项目设计中也经常会涉及。我通过在项目实践过程中的学习和思考，从列表页的本质、目的出发，总结以下列表页的设计方法。  Part 1 列表的本质和目的列表的本质其实是为用户提供一系列同类数据信息的展示。那信息展示的目的是什么？解决的是什么问题？在大多数情况下，列表的信息展示只是某个任务的一个中间环节，比如到达详情页的信息浏览或者批量处理的数">
+<meta property="og:type" content="article">
+<meta property="og:title" content="移动端列表页设计思考">
+<meta property="og:url" content="https://mistylin0409.github.io/mistys/2018/08/01/list/index.html">
+<meta property="og:site_name" content="Misty 林雪婷">
+<meta property="og:description" content="列表页作为一个基础功能模块，几乎在每个产品中都能看到，在实际项目设计中也经常会涉及。我通过在项目实践过程中的学习和思考，从列表页的本质、目的出发，总结以下列表页的设计方法。  Part 1 列表的本质和目的列表的本质其实是为用户提供一系列同类数据信息的展示。那信息展示的目的是什么？解决的是什么问题？在大多数情况下，列表的信息展示只是某个任务的一个中间环节，比如到达详情页的信息浏览或者批量处理的数">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="http://github.com/mistylin0409/mistys/raw/pics/list_type1.png">
+<meta property="og:image" content="http://github.com/mistylin0409/mistys/raw/pics/list_type2.png">
+<meta property="og:image" content="http://github.com/mistylin0409/mistys/raw/pics/list_type3.png">
+<meta property="og:image" content="http://github.com/mistylin0409/mistys/raw/pics/list_info.png">
+<meta property="og:image" content="http://github.com/mistylin0409/mistys/raw/pics/list_action.png">
+<meta property="og:image" content="http://github.com/mistylin0409/mistys/raw/pics/list_gesture.png">
+<meta property="og:image" content="http://github.com/mistylin0409/mistys/raw/pics/list_filter.png">
+<meta property="og:updated_time" content="2018-09-05T07:40:54.751Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="移动端列表页设计思考">
+<meta name="twitter:description" content="列表页作为一个基础功能模块，几乎在每个产品中都能看到，在实际项目设计中也经常会涉及。我通过在项目实践过程中的学习和思考，从列表页的本质、目的出发，总结以下列表页的设计方法。  Part 1 列表的本质和目的列表的本质其实是为用户提供一系列同类数据信息的展示。那信息展示的目的是什么？解决的是什么问题？在大多数情况下，列表的信息展示只是某个任务的一个中间环节，比如到达详情页的信息浏览或者批量处理的数">
+<meta name="twitter:image" content="http://github.com/mistylin0409/mistys/raw/pics/list_type1.png">
+
+
+
+
+
+
+  <link rel="canonical" href="https://mistylin0409.github.io/mistys/2018/08/01/list/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>移动端列表页设计思考 | Misty 林雪婷</title>
+  
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
 
 </head>
 
-<body>
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
 
-<!-- Menu -->
-<!-- Navigation -->
-<header>
-    <div class="logo">
-        <a href="/mistys/">Misty 林雪婷</a>
-    </div><!-- end logo -->
+  
+  
+    
+  
 
-    <div id="menu_icon"></div>
-    <nav>
-        <ul>
-            
-            <li>
-                <a href="/mistys/">Project 我的项目</a>
-            </li>
-            
-            <li>
-                <a href="/mistys/resume">Resume 我的简历</a>
-            </li>
-            
-        </ul>
-    </nav><!-- end navigation menu -->
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
 
-    <div class="footer clearfix">
-        <ul class="social clearfix">
-            
-            
-            
-            
-            
-            
-            
-            
-        </ul><!-- end social -->
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
 
-        <div class="rights">
-            <p>Copyright © 2014 magnetic.</p>
-            <p>Template by <a href="http://pixelhint.com/magnetic-free-html5-responsive-photography-website-template/">Pixelhint.com</a></p>
-            <p>Hexo Theme by <a href="http://www.codeblocq.com/">Jonathan K.</a></p>
-        </div><!-- end rights -->
-    </div ><!-- end footer -->
-</header><!-- end header -->
+    <div class="custom-logo-site-title">
+      <a href="/mistys/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Misty 林雪婷</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">UX Designer</p>
+      
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
 
 
-<!-- Main Content -->
-<section class="main clearfix">
 
-    <section class="top" style="background: url('http://github.com/mistylin0409/mistys/raw/pics/cover_detail_list.png');">
-        <div class="wrapper content_header clearfix">
-            
-
-<div class="work_nav">
-
-    <ul class="btn clearfix">
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
         
-        <li><a href="/mistys/2018/08/02/chart/" class="previous" data-title="数据可视化设计思考"></a></li>
         
-        <li><a href="/mistys/" class="grid" data-title="Portfolio"></a></li>
         
-        <li><a class="next disabled"></a></li>
+          
+          <li class="menu-item menu-item-home">
+    <a href="/mistys/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />Home</a>
+  </li>
         
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/mistys/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />Archives</a>
+  </li>
+
+      
+      
     </ul>
+  
 
-</div><!-- end work_nav -->
-            <h1 class="title">移动端列表页设计思考</h1>
-        </div>
-    </section><!-- end top -->
+  
+    
 
-    <section class="wrapper">
-        <div class="content">
+  
 
-            <!-- Gallery -->
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
             
 
-            <!-- Content -->
-            <blockquote>
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://mistylin0409.github.io/mistys/mistys/2018/08/01/list/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Misty Lin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/mistys/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Misty 林雪婷">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">移动端列表页设计思考
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2018-08-01 00:00:00" itemprop="dateCreated datePublished" datetime="2018-08-01T00:00:00+08:00">2018-08-01</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2018-09-05 15:40:54" itemprop="dateModified" datetime="2018-09-05T15:40:54+08:00">2018-09-05</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
 <p>列表页作为一个基础功能模块，几乎在每个产品中都能看到，在实际项目设计中也经常会涉及。我通过在项目实践过程中的学习和思考，从列表页的本质、目的出发，总结以下列表页的设计方法。</p>
 </blockquote>
 <h1 id="Part-1-列表的本质和目的"><a href="#Part-1-列表的本质和目的" class="headerlink" title="Part 1 列表的本质和目的"></a>Part 1 列表的本质和目的</h1><p>列表的本质其实是为用户提供一系列同类数据信息的展示。那信息展示的目的是什么？解决的是什么问题？在大多数情况下，列表的信息展示只是某个任务的一个中间环节，比如到达详情页的信息浏览或者批量处理的数据选择，所以列表其实只是用户达到最终目的的其中一个过程，如此可以将列表的本质总结为：为用户提供一系列的同类信息展示，通过有效的信息组织，帮助用户快速找到感兴趣的信息并引导进入下一步的操作。</p>
@@ -172,43 +409,339 @@ Part 1 列表的本质和目的列表的本质其实是为用户提供一系列�
 <li><strong>筛选&amp;排序</strong><br>排序和筛选通常用于列表项信息较多较复杂的列表，由于影响用户判断的因素较多，所以将关键的影响因素提取为筛选项或者排序项汇总在一起提供给用户。筛选排序项较多的情况下，设计时还需考虑如何将筛选排序有逻辑地分类展示。为提高筛选效率，在一些情况下还会将特殊的筛选项暴露在列表页上，这多见于大型电商平台。</li>
 </ol>
 
+      
+    </div>
 
-            <!-- Tags -->
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/mistys/2018/08/02/chart/" rel="prev" title="数据可视化设计思考">
+                数据可视化设计思考 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Misty Lin</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/mistys/archives/">
+                
+                    <span class="site-state-item-count">6</span>
+                    <span class="site-state-item-name">posts</span>
+                  </a>
+                </div>
+              
+
+              
+
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
             
 
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Part-1-列表的本质和目的"><span class="nav-number">1.</span> <span class="nav-text">Part 1 列表的本质和目的</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Part-2-列表的分类"><span class="nav-number">2.</span> <span class="nav-text">Part 2 列表的分类</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#纯信息展示"><span class="nav-number">2.1.</span> <span class="nav-text">纯信息展示</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#信息的缩略展示"><span class="nav-number">2.2.</span> <span class="nav-text">信息的缩略展示</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#带操作的信息展示"><span class="nav-number">2.3.</span> <span class="nav-text">带操作的信息展示</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Part-3-列表的组成"><span class="nav-number">3.</span> <span class="nav-text">Part 3 列表的组成</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#列表的信息"><span class="nav-number">3.1.</span> <span class="nav-text">列表的信息</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#列表的操作"><span class="nav-number">3.2.</span> <span class="nav-text">列表的操作</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Part-4-快速定位信息的辅助工具"><span class="nav-number">4.</span> <span class="nav-text">Part 4 快速定位信息的辅助工具</span></a></li></ol></div>
+            
 
-<div class="tags">
-    
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Misty Lin</span>
+
+  
+
+  
 </div>
 
 
 
-            <!-- Comments -->
-            <div>
-                
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> v3.7.1</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme – <a class="theme-link" target="_blank" href="https://theme-next.org">NexT.Muse</a> v6.4.1</div>
 
 
 
 
-            </div>
-        </div><!-- end content -->
-    </section>
-</section><!-- end main -->
+        
 
-<!-- After footer scripts -->
 
-<!-- jQuery -->
-<script src="/mistys/js/jquery.js"></script>
 
-<!-- Custom Code -->
-<script src="/mistys/js/main.js"></script>
 
-<!-- Gallery -->
-<script src="//cdn.rawgit.com/noelboss/featherlight/1.3.5/release/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
 
-<!-- Disqus Comments -->
 
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+	
+    
+
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/mistys/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/mistys/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/mistys/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/mistys/js/src/utils.js?v=6.4.1"></script>
+
+  <script type="text/javascript" src="/mistys/js/src/motion.js?v=6.4.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/mistys/js/src/scrollspy.js?v=6.4.1"></script>
+<script type="text/javascript" src="/mistys/js/src/post-details.js?v=6.4.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/mistys/js/src/bootstrap.js?v=6.4.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
 
 </body>
-
 </html>
