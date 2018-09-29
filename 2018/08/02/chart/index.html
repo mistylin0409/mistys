@@ -1,392 +1,151 @@
 <!DOCTYPE html>
+<html lang="en">
 
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-<html class="theme-next muse use-motion" lang="">
+<!-- Head tag -->
 <head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
-<meta name="theme-color" content="#222">
 
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
 
+    <!--Description-->
+    
+        <meta name="description" content="在健身房管理SaaS系统中，数据的统计和展示是对B端用户很有价值的一部分，健身房管理者需要通过数据来了解内部员工情况、场馆运营情况、会员消费情况等等，所以数据如何统计和展示将影响SaaS产品的使用效率，关系到付费客户对于产品的满意度和续费率。在设计数据可视化的项目中，我通过学习和实践总结了数据图表的">
+    
 
+    <!--Author-->
+    
+        <meta name="author" content="Misty Lin">
+    
 
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="数据可视化设计思考"/>
+    
 
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="Misty 林雪婷"/>
 
+    <!--Page Cover-->
+    
+        <meta property="og:image" content=""/>
+    
 
+    <!-- Title -->
+    
+    <title>数据可视化设计思考 - Misty 林雪婷</title>
 
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/mistys/css/reset.css">
+    <link rel="stylesheet" href="/mistys/css/main.css">
 
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
 
+    <!-- Gallery -->
+    <link href="//cdn.rawgit.com/noelboss/featherlight/1.3.5/release/featherlight.min.css" type="text/css" rel="stylesheet" />
 
+    <!-- Google Analytics -->
+    
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
+        ga('create', 'UA-124806381-1', 'auto');
+        ga('send', 'pageview');
 
+    </script>
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<link href="/mistys/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
-
-<link href="/mistys/css/main.css?v=6.4.1" rel="stylesheet" type="text/css" />
-
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/mistys/images/apple-touch-icon-next.png?v=6.4.1">
-
-
-  <link rel="icon" type="image/png" sizes="32x32" href="/mistys/images/favicon-32x32-next.png?v=6.4.1">
-
-
-  <link rel="icon" type="image/png" sizes="16x16" href="/mistys/images/favicon-16x16-next.png?v=6.4.1">
-
-
-  <link rel="mask-icon" href="/mistys/images/logo.svg?v=6.4.1" color="#222">
-
-
-
-
-
-
-
-
-
-<script type="text/javascript" id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/mistys/',
-    scheme: 'Muse',
-    version: '6.4.1',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
-    fancybox: false,
-    fastclick: false,
-    lazyload: false,
-    tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    }
-  };
-</script>
-
-
-  
-
-
-
-
-  <meta name="description" content="在健身房管理SaaS系统中，数据的统计和展示是对B端用户很有价值的一部分，健身房管理者需要通过数据来了解内部员工情况、场馆运营情况、会员消费情况等等，所以数据如何统计和展示将影响SaaS产品的使用效率，关系到付费客户对于产品的满意度和续费率。在设计数据可视化的项目中，我通过学习和实践总结了数据图表的一些设计方法。   Part 1 图表的使用场景首先，在开始具体的图表设计之前要思考和明确的问题是">
-<meta property="og:type" content="article">
-<meta property="og:title" content="数据可视化设计思考">
-<meta property="og:url" content="https://mistylin0409.github.io/mistys/2018/08/02/chart/index.html">
-<meta property="og:site_name" content="Misty 林雪婷">
-<meta property="og:description" content="在健身房管理SaaS系统中，数据的统计和展示是对B端用户很有价值的一部分，健身房管理者需要通过数据来了解内部员工情况、场馆运营情况、会员消费情况等等，所以数据如何统计和展示将影响SaaS产品的使用效率，关系到付费客户对于产品的满意度和续费率。在设计数据可视化的项目中，我通过学习和实践总结了数据图表的一些设计方法。   Part 1 图表的使用场景首先，在开始具体的图表设计之前要思考和明确的问题是">
-<meta property="og:locale" content="default">
-<meta property="og:image" content="http://github.com/mistylin0409/mistys/raw/pics/chart_table.png">
-<meta property="og:image" content="http://github.com/mistylin0409/mistys/raw/pics/chart_line.png">
-<meta property="og:image" content="http://github.com/mistylin0409/mistys/raw/pics/chart_area.png">
-<meta property="og:image" content="http://github.com/mistylin0409/mistys/raw/pics/chart_bar.png">
-<meta property="og:image" content="http://github.com/mistylin0409/mistys/raw/pics/chart_pie.png">
-<meta property="og:image" content="http://github.com/mistylin0409/mistys/raw/pics/chart_gradient.png">
-<meta property="og:image" content="http://github.com/mistylin0409/mistys/raw/pics/chart_flat.png">
-<meta property="og:image" content="http://github.com/mistylin0409/mistys/raw/pics/chart_biased.png">
-<meta property="og:image" content="http://github.com/mistylin0409/mistys/raw/pics/chart_pattern.png">
-<meta property="og:updated_time" content="2018-09-01T12:15:50.956Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="数据可视化设计思考">
-<meta name="twitter:description" content="在健身房管理SaaS系统中，数据的统计和展示是对B端用户很有价值的一部分，健身房管理者需要通过数据来了解内部员工情况、场馆运营情况、会员消费情况等等，所以数据如何统计和展示将影响SaaS产品的使用效率，关系到付费客户对于产品的满意度和续费率。在设计数据可视化的项目中，我通过学习和实践总结了数据图表的一些设计方法。   Part 1 图表的使用场景首先，在开始具体的图表设计之前要思考和明确的问题是">
-<meta name="twitter:image" content="http://github.com/mistylin0409/mistys/raw/pics/chart_table.png">
-
-
-
-
-
-
-  <link rel="canonical" href="https://mistylin0409.github.io/mistys/2018/08/02/chart/"/>
-
-
-
-<script type="text/javascript" id="page.configurations">
-  CONFIG.page = {
-    sidebar: "",
-  };
-</script>
-
-  <title>数据可视化设计思考 | Misty 林雪婷</title>
-  
-
-
-
-
-
-
-
-
-
-  <noscript>
-  <style type="text/css">
-    .use-motion .motion-element,
-    .use-motion .brand,
-    .use-motion .menu-item,
-    .sidebar-inner,
-    .use-motion .post-block,
-    .use-motion .pagination,
-    .use-motion .comments,
-    .use-motion .post-header,
-    .use-motion .post-body,
-    .use-motion .collection-title { opacity: initial; }
-
-    .use-motion .logo,
-    .use-motion .site-title,
-    .use-motion .site-subtitle {
-      opacity: initial;
-      top: initial;
-    }
-
-    .use-motion {
-      .logo-line-before i { left: initial; }
-      .logo-line-after i { right: initial; }
-    }
-  </style>
-</noscript>
+    <!--Favicon-->
+    
 
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+<body>
 
-  
-  
-    
-  
+<!-- Menu -->
+<!-- Navigation -->
+<header>
+    <div class="logo">
+        <a href="/mistys/">Misty 林雪婷</a>
+    </div><!-- end logo -->
 
-  <div class="container sidebar-position-left page-post-detail">
-    <div class="headband"></div>
+    <div id="menu_icon"></div>
+    <nav>
+        <ul>
+            
+            <li>
+                <a href="/mistys/">Project 我的项目</a>
+            </li>
+            
+            <li>
+                <a href="/mistys/resume">Resume 我的简历</a>
+            </li>
+            
+        </ul>
+    </nav><!-- end navigation menu -->
 
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
-    
+    <div class="footer clearfix">
+        <ul class="social clearfix">
+            
+            
+            
+            
+            
+            
+            
+            
+        </ul><!-- end social -->
 
-    <div class="custom-logo-site-title">
-      <a href="/mistys/" class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Misty 林雪婷</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
-    </div>
-    
-      
-        <p class="site-subtitle">UX Designer</p>
-      
-    
-  </div>
-
-  <div class="site-nav-toggle">
-    <button aria-label="Toggle navigation bar">
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
-  </div>
-</div>
+        <div class="rights">
+            <p>Copyright © 2014 magnetic.</p>
+            <p>Template by <a href="http://pixelhint.com/magnetic-free-html5-responsive-photography-website-template/">Pixelhint.com</a></p>
+            <p>Hexo Theme by <a href="http://www.codeblocq.com/">Jonathan K.</a></p>
+        </div><!-- end rights -->
+    </div ><!-- end footer -->
+</header><!-- end header -->
 
 
+<!-- Main Content -->
+<section class="main clearfix">
 
-<nav class="site-nav">
-  
-    <ul id="menu" class="menu">
-      
+    <section class="top" style="background: url('http://github.com/mistylin0409/mistys/raw/pics/cover_detail_chart.png');">
+        <div class="wrapper content_header clearfix">
+            
+
+<div class="work_nav">
+
+    <ul class="btn clearfix">
         
+        <li><a href="/mistys/2018/08/22/teamwork/" class="previous" data-title="UED团队工作流程优化"></a></li>
         
+        <li><a href="/mistys/" class="grid" data-title="Portfolio"></a></li>
         
-          
-          <li class="menu-item menu-item-home">
-    <a href="/mistys/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />Home</a>
-  </li>
+        <li><a href="/mistys/2018/08/01/list/" class="next" data-title="移动端列表页设计思考"></a></li>
         
-        
-        
-          
-          <li class="menu-item menu-item-archives">
-    <a href="/mistys/archives/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />Archives</a>
-  </li>
-
-      
-      
     </ul>
-  
 
-  
-    
-
-  
-
-  
-</nav>
-
-
-
-  
-
-
-
-</div>
-    </header>
-
-    
-
-
-    <main id="main" class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          
-          <div id="content" class="content">
-            
-
-  <div id="posts" class="posts-expand">
-    
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://mistylin0409.github.io/mistys/mistys/2018/08/02/chart/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Misty Lin">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/mistys/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Misty 林雪婷">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">数据可视化设计思考
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2018-08-02 00:00:00" itemprop="dateCreated datePublished" datetime="2018-08-02T00:00:00+08:00">2018-08-02</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2018-09-01 20:15:50" itemprop="dateModified" datetime="2018-09-01T20:15:50+08:00">2018-09-01</time>
-              
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
+</div><!-- end work_nav -->
+            <h1 class="title">数据可视化设计思考</h1>
         </div>
-      </header>
-    
+    </section><!-- end top -->
 
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
+    <section class="wrapper">
+        <div class="content">
 
-      
-      
+            <!-- Gallery -->
+            
 
-      
-        <blockquote>
+            <!-- Content -->
+            <blockquote>
 <p>在健身房管理SaaS系统中，数据的统计和展示是对B端用户很有价值的一部分，健身房管理者需要通过数据来了解内部员工情况、场馆运营情况、会员消费情况等等，所以数据如何统计和展示将影响SaaS产品的使用效率，关系到付费客户对于产品的满意度和续费率。在设计数据可视化的项目中，我通过学习和实践总结了数据图表的一些设计方法。</p>
 </blockquote>
 <p><br></p>
@@ -431,343 +190,43 @@
 <p>参考链接：<br>Predix Design System: <a href="https://www.predix-ui.com/#/design/data-vis" target="_blank" rel="noopener">https://www.predix-ui.com/#/design/data-vis</a><br>Nutanix Design System: <a href="http://nutanix.design/2.0/#Diagrams_Colors" target="_blank" rel="noopener">http://nutanix.design/2.0/#Diagrams_Colors</a><br>Lexicon Design System: <a href="https://lexicondesign.io/docs/patterns/Charts/charts.html" target="_blank" rel="noopener">https://lexicondesign.io/docs/patterns/Charts/charts.html</a><br>Opattern Design System: <a href="https://ux.opower.com/opattern/how-to-charts.html" target="_blank" rel="noopener">https://ux.opower.com/opattern/how-to-charts.html</a><br>HubSpot Canvas Design System: <a href="https://canvas.hubspot.com/graphs" target="_blank" rel="noopener">https://canvas.hubspot.com/graphs</a><br>Shopify Polaris Design System: <a href="https://polaris.shopify.com/design/data-visualizations#navigation" target="_blank" rel="noopener">https://polaris.shopify.com/design/data-visualizations#navigation</a><br>Pega UX Design System: <a href="https://design.pega.com/patterns-charting" target="_blank" rel="noopener">https://design.pega.com/patterns-charting</a><br>QuickBooks Design System: <a href="https://designsystem.quickbooks.com/data-viz/" target="_blank" rel="noopener">https://designsystem.quickbooks.com/data-viz/</a></p>
 </blockquote>
 
-      
-    </div>
 
+            <!-- Tags -->
+            
+
+
+<div class="tags">
     
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-      
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/mistys/2018/08/01/list/" rel="next" title="移动端列表页设计思考">
-                <i class="fa fa-chevron-left"></i> 移动端列表页设计思考
-              </a>
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/mistys/2018/08/22/teamwork/" rel="prev" title="UED团队工作流程优化">
-                UED团队工作流程优化 <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
-
-      
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-  </div>
-
-
-          </div>
-          
-
-  
-
-
-
-        </div>
-        
-          
-  
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
-  </div>
-
-  <aside id="sidebar" class="sidebar">
-    
-    <div class="sidebar-inner">
-
-      
-
-      
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            Table of Contents
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            Overview
-          </li>
-        </ul>
-      
-
-      <section class="site-overview-wrap sidebar-panel">
-        <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-            
-              <p class="site-author-name" itemprop="name">Misty Lin</p>
-              <p class="site-description motion-element" itemprop="description"></p>
-          </div>
-
-          
-            <nav class="site-state motion-element">
-              
-                <div class="site-state-item site-state-posts">
-                
-                  <a href="/mistys/archives/">
-                
-                    <span class="site-state-item-count">6</span>
-                    <span class="site-state-item-name">posts</span>
-                  </a>
-                </div>
-              
-
-              
-
-              
-            </nav>
-          
-
-          
-
-          
-
-          
-          
-
-          
-          
-
-          
-            
-          
-          
-
-        </div>
-      </section>
-
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Part-1-图表的使用场景"><span class="nav-number">1.</span> <span class="nav-text">Part 1 图表的使用场景</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Part-2-图表的设计原则"><span class="nav-number">2.</span> <span class="nav-text">Part 2 图表的设计原则</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Part-3-图表类型的选择"><span class="nav-number">3.</span> <span class="nav-text">Part 3 图表类型的选择</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#折线图"><span class="nav-number">3.1.</span> <span class="nav-text">折线图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#面积图"><span class="nav-number">3.2.</span> <span class="nav-text">面积图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#柱状图-条形图"><span class="nav-number">3.3.</span> <span class="nav-text">柱状图/条形图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#饼图-圆环图"><span class="nav-number">3.4.</span> <span class="nav-text">饼图/圆环图</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Part-4-图表设计视觉要求"><span class="nav-number">4.</span> <span class="nav-text">Part 4 图表设计视觉要求</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#颜色"><span class="nav-number">4.1.</span> <span class="nav-text">颜色</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#坐标轴"><span class="nav-number">4.2.</span> <span class="nav-text">坐标轴</span></a></li></ol></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
-      
-
-      
-
-    </div>
-  </aside>
-
-
-        
-      </div>
-    </main>
-
-    <footer id="footer" class="footer">
-      <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
-  <span class="with-love" id="animate">
-    <i class="fa fa-user"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">Misty Lin</span>
-
-  
-
-  
 </div>
 
 
 
+            <!-- Comments -->
+            <div>
+                
 
-  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> v3.7.1</div>
 
 
 
-  <span class="post-meta-divider">|</span>
+            </div>
+        </div><!-- end content -->
+    </section>
+</section><!-- end main -->
 
+<!-- After footer scripts -->
 
+<!-- jQuery -->
+<script src="/mistys/js/jquery.js"></script>
 
-  <div class="theme-info">Theme – <a class="theme-link" target="_blank" href="https://theme-next.org">NexT.Muse</a> v6.4.1</div>
+<!-- Custom Code -->
+<script src="/mistys/js/main.js"></script>
 
+<!-- Gallery -->
+<script src="//cdn.rawgit.com/noelboss/featherlight/1.3.5/release/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
 
+<!-- Disqus Comments -->
 
-
-        
-
-
-
-
-
-
-
-
-        
-      </div>
-    </footer>
-
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-      </div>
-    
-
-    
-	
-    
-
-    
-  </div>
-
-  
-
-<script type="text/javascript">
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
-  }
-</script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-    <script type="text/javascript" src="/mistys/lib/jquery/index.js?v=2.1.3"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/mistys/lib/velocity/velocity.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/mistys/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-  
-
-
-  
-
-
-  <script type="text/javascript" src="/mistys/js/src/utils.js?v=6.4.1"></script>
-
-  <script type="text/javascript" src="/mistys/js/src/motion.js?v=6.4.1"></script>
-
-
-
-  
-  
-
-  
-  <script type="text/javascript" src="/mistys/js/src/scrollspy.js?v=6.4.1"></script>
-<script type="text/javascript" src="/mistys/js/src/post-details.js?v=6.4.1"></script>
-
-
-
-  
-
-
-  <script type="text/javascript" src="/mistys/js/src/bootstrap.js?v=6.4.1"></script>
-
-
-
-  
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-  
-
-  
-
-  
-
-  
-  
-
-  
-
-  
-
-  
-
-  
-
-  
 
 </body>
+
 </html>

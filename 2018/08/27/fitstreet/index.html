@@ -1,393 +1,151 @@
 <!DOCTYPE html>
+<html lang="en">
 
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-<html class="theme-next muse use-motion" lang="">
+<!-- Head tag -->
 <head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
-<meta name="theme-color" content="#222">
 
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
 
+    <!--Description-->
+    
+        <meta name="description" content="项目背景青橙在两三年的时间内通过健身房管理SaaS系统累积了行业内众多的健身房资源，包括健身房场馆、教练、课程，但我们之前的业务一直将重点放在我们的B端客户，也就是健身房，对于健身房所服务的会员没有直接的触达。现在我们在做的这个产品，Fit Street - 健身爱好者小程序，就是将目标用户锁定在健">
+    
 
+    <!--Author-->
+    
+        <meta name="author" content="Misty Lin">
+    
 
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="Fit Street 健身爱好者小程序"/>
+    
 
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="Misty 林雪婷"/>
 
+    <!--Page Cover-->
+    
+        <meta property="og:image" content=""/>
+    
 
+    <!-- Title -->
+    
+    <title>Fit Street 健身爱好者小程序 - Misty 林雪婷</title>
 
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/mistys/css/reset.css">
+    <link rel="stylesheet" href="/mistys/css/main.css">
 
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
 
+    <!-- Gallery -->
+    <link href="//cdn.rawgit.com/noelboss/featherlight/1.3.5/release/featherlight.min.css" type="text/css" rel="stylesheet" />
 
+    <!-- Google Analytics -->
+    
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
+        ga('create', 'UA-124806381-1', 'auto');
+        ga('send', 'pageview');
 
+    </script>
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<link href="/mistys/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
-
-<link href="/mistys/css/main.css?v=6.4.1" rel="stylesheet" type="text/css" />
-
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/mistys/images/apple-touch-icon-next.png?v=6.4.1">
-
-
-  <link rel="icon" type="image/png" sizes="32x32" href="/mistys/images/favicon-32x32-next.png?v=6.4.1">
-
-
-  <link rel="icon" type="image/png" sizes="16x16" href="/mistys/images/favicon-16x16-next.png?v=6.4.1">
-
-
-  <link rel="mask-icon" href="/mistys/images/logo.svg?v=6.4.1" color="#222">
-
-
-
-
-
-
-
-
-
-<script type="text/javascript" id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/mistys/',
-    scheme: 'Muse',
-    version: '6.4.1',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
-    fancybox: false,
-    fastclick: false,
-    lazyload: false,
-    tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    }
-  };
-</script>
-
-
-  
-
-
-
-
-  <meta name="description" content="项目背景青橙在两三年的时间内通过健身房管理SaaS系统累积了行业内众多的健身房资源，包括健身房场馆、教练、课程，但我们之前的业务一直将重点放在我们的B端客户，也就是健身房，对于健身房所服务的会员没有直接的触达。现在我们在做的这个产品，Fit Street - 健身爱好者小程序，就是将目标用户锁定在健身房的会员，提供一个健身课程聚合平台，以场馆、课程、教练三个展示维度，帮助用户找到适合自己的健身课程">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Fit Street 健身爱好者小程序">
-<meta property="og:url" content="https://mistylin0409.github.io/mistys/2018/08/27/fitstreet/index.html">
-<meta property="og:site_name" content="Misty 林雪婷">
-<meta property="og:description" content="项目背景青橙在两三年的时间内通过健身房管理SaaS系统累积了行业内众多的健身房资源，包括健身房场馆、教练、课程，但我们之前的业务一直将重点放在我们的B端客户，也就是健身房，对于健身房所服务的会员没有直接的触达。现在我们在做的这个产品，Fit Street - 健身爱好者小程序，就是将目标用户锁定在健身房的会员，提供一个健身课程聚合平台，以场馆、课程、教练三个展示维度，帮助用户找到适合自己的健身课程">
-<meta property="og:locale" content="default">
-<meta property="og:image" content="http://github.com/mistylin0409/mistys/raw/pics/fitstreet_role.png">
-<meta property="og:image" content="http://github.com/mistylin0409/mistys/raw/pics/fitstreet_background.png">
-<meta property="og:image" content="http://github.com/mistylin0409/mistys/raw/pics/fitstreet_user.png">
-<meta property="og:image" content="http://github.com/mistylin0409/mistys/raw/pics/fitstreet_product.png">
-<meta property="og:image" content="http://github.com/mistylin0409/mistys/raw/pics/fitstreet_userjourney.png">
-<meta property="og:image" content="http://github.com/mistylin0409/mistys/raw/pics/fitstreet_ux1.png">
-<meta property="og:image" content="http://github.com/mistylin0409/mistys/raw/pics/fitstreet_ux2.png">
-<meta property="og:image" content="http://github.com/mistylin0409/mistys/raw/pics/fitstreet_ux3.png">
-<meta property="og:image" content="http://github.com/mistylin0409/mistys/raw/pics/fitstreet_ux4.png">
-<meta property="og:image" content="http://github.com/mistylin0409/mistys/raw/pics/fitstreet_visual.png">
-<meta property="og:updated_time" content="2018-09-06T03:33:03.811Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Fit Street 健身爱好者小程序">
-<meta name="twitter:description" content="项目背景青橙在两三年的时间内通过健身房管理SaaS系统累积了行业内众多的健身房资源，包括健身房场馆、教练、课程，但我们之前的业务一直将重点放在我们的B端客户，也就是健身房，对于健身房所服务的会员没有直接的触达。现在我们在做的这个产品，Fit Street - 健身爱好者小程序，就是将目标用户锁定在健身房的会员，提供一个健身课程聚合平台，以场馆、课程、教练三个展示维度，帮助用户找到适合自己的健身课程">
-<meta name="twitter:image" content="http://github.com/mistylin0409/mistys/raw/pics/fitstreet_role.png">
-
-
-
-
-
-
-  <link rel="canonical" href="https://mistylin0409.github.io/mistys/2018/08/27/fitstreet/"/>
-
-
-
-<script type="text/javascript" id="page.configurations">
-  CONFIG.page = {
-    sidebar: "",
-  };
-</script>
-
-  <title>Fit Street 健身爱好者小程序 | Misty 林雪婷</title>
-  
-
-
-
-
-
-
-
-
-
-  <noscript>
-  <style type="text/css">
-    .use-motion .motion-element,
-    .use-motion .brand,
-    .use-motion .menu-item,
-    .sidebar-inner,
-    .use-motion .post-block,
-    .use-motion .pagination,
-    .use-motion .comments,
-    .use-motion .post-header,
-    .use-motion .post-body,
-    .use-motion .collection-title { opacity: initial; }
-
-    .use-motion .logo,
-    .use-motion .site-title,
-    .use-motion .site-subtitle {
-      opacity: initial;
-      top: initial;
-    }
-
-    .use-motion {
-      .logo-line-before i { left: initial; }
-      .logo-line-after i { right: initial; }
-    }
-  </style>
-</noscript>
+    <!--Favicon-->
+    
 
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+<body>
 
-  
-  
-    
-  
+<!-- Menu -->
+<!-- Navigation -->
+<header>
+    <div class="logo">
+        <a href="/mistys/">Misty 林雪婷</a>
+    </div><!-- end logo -->
 
-  <div class="container sidebar-position-left page-post-detail">
-    <div class="headband"></div>
+    <div id="menu_icon"></div>
+    <nav>
+        <ul>
+            
+            <li>
+                <a href="/mistys/">Project 我的项目</a>
+            </li>
+            
+            <li>
+                <a href="/mistys/resume">Resume 我的简历</a>
+            </li>
+            
+        </ul>
+    </nav><!-- end navigation menu -->
 
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
-    
+    <div class="footer clearfix">
+        <ul class="social clearfix">
+            
+            
+            
+            
+            
+            
+            
+            
+        </ul><!-- end social -->
 
-    <div class="custom-logo-site-title">
-      <a href="/mistys/" class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Misty 林雪婷</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
-    </div>
-    
-      
-        <p class="site-subtitle">UX Designer</p>
-      
-    
-  </div>
-
-  <div class="site-nav-toggle">
-    <button aria-label="Toggle navigation bar">
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
-  </div>
-</div>
+        <div class="rights">
+            <p>Copyright © 2014 magnetic.</p>
+            <p>Template by <a href="http://pixelhint.com/magnetic-free-html5-responsive-photography-website-template/">Pixelhint.com</a></p>
+            <p>Hexo Theme by <a href="http://www.codeblocq.com/">Jonathan K.</a></p>
+        </div><!-- end rights -->
+    </div ><!-- end footer -->
+</header><!-- end header -->
 
 
+<!-- Main Content -->
+<section class="main clearfix">
 
-<nav class="site-nav">
-  
-    <ul id="menu" class="menu">
-      
+    <section class="top" style="background: url('http://github.com/mistylin0409/mistys/raw/pics/cover_detail_fitstreet2x.png');">
+        <div class="wrapper content_header clearfix">
+            
+
+<div class="work_nav">
+
+    <ul class="btn clearfix">
         
+        <li><a class="previous disabled"></a></li>
         
+        <li><a href="/mistys/" class="grid" data-title="Portfolio"></a></li>
         
-          
-          <li class="menu-item menu-item-home">
-    <a href="/mistys/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />Home</a>
-  </li>
+        <li><a href="/mistys/2018/08/27/designguideline/" class="next" data-title="移动端交互设计规范"></a></li>
         
-        
-        
-          
-          <li class="menu-item menu-item-archives">
-    <a href="/mistys/archives/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />Archives</a>
-  </li>
-
-      
-      
     </ul>
-  
 
-  
-    
-
-  
-
-  
-</nav>
-
-
-
-  
-
-
-
-</div>
-    </header>
-
-    
-
-
-    <main id="main" class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          
-          <div id="content" class="content">
-            
-
-  <div id="posts" class="posts-expand">
-    
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://mistylin0409.github.io/mistys/mistys/2018/08/27/fitstreet/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Misty Lin">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/mistys/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Misty 林雪婷">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">Fit Street 健身爱好者小程序
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2018-08-27 19:06:33" itemprop="dateCreated datePublished" datetime="2018-08-27T19:06:33+08:00">2018-08-27</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2018-09-06 11:33:03" itemprop="dateModified" datetime="2018-09-06T11:33:03+08:00">2018-09-06</time>
-              
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
+</div><!-- end work_nav -->
+            <h1 class="title">Fit Street 健身爱好者小程序</h1>
         </div>
-      </header>
-    
+    </section><!-- end top -->
 
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
+    <section class="wrapper">
+        <div class="content">
 
-      
-      
+            <!-- Gallery -->
+            
 
-      
-        <h2 id="项目背景"><a href="#项目背景" class="headerlink" title="项目背景"></a>项目背景</h2><p>青橙在两三年的时间内通过健身房管理SaaS系统累积了行业内众多的健身房资源，包括健身房场馆、教练、课程，但我们之前的业务一直将重点放在我们的B端客户，也就是健身房，对于健身房所服务的会员没有直接的触达。现在我们在做的这个产品，<strong>Fit Street - 健身爱好者小程序</strong>，就是将目标用户锁定在健身房的会员，提供一个健身课程聚合平台，以场馆、课程、教练三个展示维度，帮助用户找到适合自己的健身课程，并完成预约体验。这恰好可以发挥我们之前所积累的B端资源的优势，在这个C端平台上展示大量的健身房及其提供的课程和教练服务。</p>
+            <!-- Content -->
+            <h2 id="项目背景"><a href="#项目背景" class="headerlink" title="项目背景"></a>项目背景</h2><p>青橙在两三年的时间内通过健身房管理SaaS系统累积了行业内众多的健身房资源，包括健身房场馆、教练、课程，但我们之前的业务一直将重点放在我们的B端客户，也就是健身房，对于健身房所服务的会员没有直接的触达。现在我们在做的这个产品，<strong>Fit Street - 健身爱好者小程序</strong>，就是将目标用户锁定在健身房的会员，提供一个健身课程聚合平台，以场馆、课程、教练三个展示维度，帮助用户找到适合自己的健身课程，并完成预约体验。这恰好可以发挥我们之前所积累的B端资源的优势，在这个C端平台上展示大量的健身房及其提供的课程和教练服务。</p>
 <h2 id="担任角色和负责工作"><a href="#担任角色和负责工作" class="headerlink" title="担任角色和负责工作"></a>担任角色和负责工作</h2><p>我在这个项目里所担任的角色是 <strong>交互设计师</strong>，负责设计产品的页面布局和信息框架，梳理用户核心流程，输出交互稿，连接上下游，与产品经理和视觉设计师沟通协作。<br><br><br><img src="http://github.com/mistylin0409/mistys/raw/pics/fitstreet_role.png" alt=""> </p>
 <h2 id="公司战略和市场行业背景"><a href="#公司战略和市场行业背景" class="headerlink" title="公司战略和市场行业背景"></a>公司战略和市场行业背景</h2><p>青橙从2014年创立以来，通过健身房管理SaaS系统及其他相关服务于健身行业B端客户的产品，积累了大量健身行业B端资源，包括健身房场馆、健身课程、健身教练。随着两三年的业务发展，B端市场日趋饱和，而健身房所服务的会员，在消费升级的背景下，有着更多可挖掘的市场机会，所以在今年，青橙将凭借之前积累的资源优势，在健身行业C端市场做尝试。<br><br><br><img src="http://github.com/mistylin0409/mistys/raw/pics/fitstreet_background.png" alt=""> </p>
 <h2 id="需求分析和用户研究"><a href="#需求分析和用户研究" class="headerlink" title="需求分析和用户研究"></a>需求分析和用户研究</h2><p>在了解了公司的战略目标之后，接下来要思考的问题是，C端产品的切入点是什么？我们要提供什么样的服务来满足健身房潜在会员这部分群体的需求？同时还能发挥青橙的B端资源优势？在切入点探索的头脑风暴中，有公司不同职能的同事参与，不同角色的人会从不同的角度作为思路的依据，比如商业、技术，而我作为设计师，很自然地会先从用户的角度出发，思考我们现在要服务的这部分人群是什么样的，会有哪些需求和特征，从而思考产品的切入点。<br><br><br><img src="http://github.com/mistylin0409/mistys/raw/pics/fitstreet_user.png" alt=""> </p>
@@ -402,339 +160,43 @@
 <h3 id="项目1-0阶段需要明确目标和边界"><a href="#项目1-0阶段需要明确目标和边界" class="headerlink" title="项目1.0阶段需要明确目标和边界"></a>项目1.0阶段需要明确目标和边界</h3><p>在项目1.0的阶段，设计的重点应该放在用户的核心流程能够顺利走通，其他丰富核心流程的部分放到以后的迭代有规划地去完善，如果在这个阶段无限制地想把每个流程做到完善，那项目体量会越来越大，于此同时，有明确的目标才能指导我们哪些流程是必须在这一期做到完善的，哪些是可以容忍简化的。比如Fit Street这个项目1.0的阶段，用户下单成交是核心流程，那么预约支付这个环节就必须做到完善，而评价体系就可以规划到下一期迭代。<br>在以前的项目中我们总是在项目开发的过程中无目标地不断扩大边界，导致项目上线延期、开发量越多问题越多。</p>
 <h3 id="待完善问题"><a href="#待完善问题" class="headerlink" title="待完善问题"></a>待完善问题</h3><p>在1.0版本上线之后，需要去验证产品目标和设计目标是否达成，以此对接下来的方向进行合理规划。对于本期项目而言，还有需要完善的地方，由于时间限制，没有明确设计目标的验证方式，项目前期的用户研究也不够充分，在之后的产品迭代中需要完善这部分内容，让设计更有依据。</p>
 
-      
-    </div>
 
+            <!-- Tags -->
+            
+
+
+<div class="tags">
     
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-      
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/mistys/2018/08/27/designguideline/" rel="next" title="移动端交互设计规范">
-                <i class="fa fa-chevron-left"></i> 移动端交互设计规范
-              </a>
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-          </div>
-        </div>
-      
-
-      
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-  </div>
-
-
-          </div>
-          
-
-  
-
-
-
-        </div>
-        
-          
-  
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
-  </div>
-
-  <aside id="sidebar" class="sidebar">
-    
-    <div class="sidebar-inner">
-
-      
-
-      
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            Table of Contents
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            Overview
-          </li>
-        </ul>
-      
-
-      <section class="site-overview-wrap sidebar-panel">
-        <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-            
-              <p class="site-author-name" itemprop="name">Misty Lin</p>
-              <p class="site-description motion-element" itemprop="description"></p>
-          </div>
-
-          
-            <nav class="site-state motion-element">
-              
-                <div class="site-state-item site-state-posts">
-                
-                  <a href="/mistys/archives/">
-                
-                    <span class="site-state-item-count">6</span>
-                    <span class="site-state-item-name">posts</span>
-                  </a>
-                </div>
-              
-
-              
-
-              
-            </nav>
-          
-
-          
-
-          
-
-          
-          
-
-          
-          
-
-          
-            
-          
-          
-
-        </div>
-      </section>
-
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#项目背景"><span class="nav-number">1.</span> <span class="nav-text">项目背景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#担任角色和负责工作"><span class="nav-number">2.</span> <span class="nav-text">担任角色和负责工作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#公司战略和市场行业背景"><span class="nav-number">3.</span> <span class="nav-text">公司战略和市场行业背景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#需求分析和用户研究"><span class="nav-number">4.</span> <span class="nav-text">需求分析和用户研究</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#产品定义和产品目标"><span class="nav-number">5.</span> <span class="nav-text">产品定义和产品目标</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#用户体验路径"><span class="nav-number">6.</span> <span class="nav-text">用户体验路径</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解决方案"><span class="nav-number">7.</span> <span class="nav-text">解决方案</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#首页"><span class="nav-number">7.1.</span> <span class="nav-text">首页</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#课程、场馆、教练详情页"><span class="nav-number">7.2.</span> <span class="nav-text">课程、场馆、教练详情页</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#预约支付流程"><span class="nav-number">7.3.</span> <span class="nav-text">预约支付流程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#个人中心"><span class="nav-number">7.4.</span> <span class="nav-text">个人中心</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#视觉稿展示"><span class="nav-number">8.</span> <span class="nav-text">视觉稿展示</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#项目总结"><span class="nav-number">9.</span> <span class="nav-text">项目总结</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#上下游沟通协作"><span class="nav-number">9.1.</span> <span class="nav-text">上下游沟通协作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#项目1-0阶段需要明确目标和边界"><span class="nav-number">9.2.</span> <span class="nav-text">项目1.0阶段需要明确目标和边界</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#待完善问题"><span class="nav-number">9.3.</span> <span class="nav-text">待完善问题</span></a></li></ol></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
-      
-
-      
-
-    </div>
-  </aside>
-
-
-        
-      </div>
-    </main>
-
-    <footer id="footer" class="footer">
-      <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
-  <span class="with-love" id="animate">
-    <i class="fa fa-user"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">Misty Lin</span>
-
-  
-
-  
 </div>
 
 
 
+            <!-- Comments -->
+            <div>
+                
 
-  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> v3.7.1</div>
 
 
 
-  <span class="post-meta-divider">|</span>
+            </div>
+        </div><!-- end content -->
+    </section>
+</section><!-- end main -->
 
+<!-- After footer scripts -->
 
+<!-- jQuery -->
+<script src="/mistys/js/jquery.js"></script>
 
-  <div class="theme-info">Theme – <a class="theme-link" target="_blank" href="https://theme-next.org">NexT.Muse</a> v6.4.1</div>
+<!-- Custom Code -->
+<script src="/mistys/js/main.js"></script>
 
+<!-- Gallery -->
+<script src="//cdn.rawgit.com/noelboss/featherlight/1.3.5/release/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
 
+<!-- Disqus Comments -->
 
-
-        
-
-
-
-
-
-
-
-
-        
-      </div>
-    </footer>
-
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-      </div>
-    
-
-    
-	
-    
-
-    
-  </div>
-
-  
-
-<script type="text/javascript">
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
-  }
-</script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-    <script type="text/javascript" src="/mistys/lib/jquery/index.js?v=2.1.3"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/mistys/lib/velocity/velocity.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/mistys/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-  
-
-
-  
-
-
-  <script type="text/javascript" src="/mistys/js/src/utils.js?v=6.4.1"></script>
-
-  <script type="text/javascript" src="/mistys/js/src/motion.js?v=6.4.1"></script>
-
-
-
-  
-  
-
-  
-  <script type="text/javascript" src="/mistys/js/src/scrollspy.js?v=6.4.1"></script>
-<script type="text/javascript" src="/mistys/js/src/post-details.js?v=6.4.1"></script>
-
-
-
-  
-
-
-  <script type="text/javascript" src="/mistys/js/src/bootstrap.js?v=6.4.1"></script>
-
-
-
-  
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-  
-
-  
-
-  
-
-  
-  
-
-  
-
-  
-
-  
-
-  
-
-  
 
 </body>
+
 </html>
